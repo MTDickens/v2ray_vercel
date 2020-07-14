@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "v2ray",
+  "builds": [
+	  { "src": "*.go", "use": "@now/go" },
+	  {"src": "*.html", "use": "@now/static"},
+	  {"src": "*.jpg", "use": "@now/static"}
+  ],
+  "routes": [
+	  { "src": "/", "dest": "/index.html" },
+	  { "src": "/wall.jpg", "dest": "/wall.jpg" },
+  	{ "src": "/google/", "dest": "index.go" },
+  	{ "src": "/youtube/", "dest": "index.go" },
+	{ "src": "/url*", "dest": "index.go" },
+	{ "src": "/search*", "dest": "index.go" },
+	{ "src": "/watch*", "dest": "index.go" },
+	{ "src": "/*", "dest": "index.go" },
+  	{ "src": "/*.*", "dest": "index.go" }
+  ]
+}
